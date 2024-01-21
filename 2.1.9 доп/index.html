@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script>
+        var isSun = true;
+
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            
+            ctx.fillStyle = '#87CEEB'; 
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+           
+            ctx.fillStyle = 'brown';
+            ctx.fillRect(150, 200, 100, 100);
+            ctx.beginPath();
+            ctx.moveTo(150, 200);
+            ctx.lineTo(250, 200);
+            ctx.lineTo(200, 150);
+            ctx.closePath();
+            ctx.fillStyle = 'red';  
+            ctx.fill();
+
+            
+            ctx.fillStyle = 'Brown';
+            ctx.fillRect(50, 250, 20, 100);
+            ctx.beginPath();
+            ctx.arc(60, 250, 40, 0, Math.PI*2);
+            ctx.fillStyle = 'green';
+            ctx.fill();
+
+         
+            if (isSun) {
+                ctx.fillStyle = 'yellow';
+                ctx.beginPath();
+                ctx.arc(400, 80, 40, 0, 2*Math.PI);
+                ctx.fill();
+            } else {
+                ctx.fillStyle = 'white';
+                ctx.beginPath();
+                ctx.arc(400, 80, 40, 0, 2*Math.PI);
+                ctx.fill();
+                ctx.fillStyle = 'white';
+                ctx.beginPath();
+                ctx.arc(400, 80, 40, 0, Math.PI);
+                ctx.fill();
+            }
+        }
+
+        function toggleSunMoon() {
+            isSun = !isSun;
+            draw();
+        }
+    </script>
+</head>
+<body onload="draw();" onclick="toggleSunMoon()">
+    <canvas id="myCanvas" width="500" height="400"></canvas>
+</body>
+</html>

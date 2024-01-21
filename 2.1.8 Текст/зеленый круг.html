@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>зел1ный круг</title>
+    <script>
+        function draw() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+
+            ctx.fillStyle = 'green';
+
+            ctx.beginPath();
+            ctx.arc(200, 40, 32, 0, 2*Math.PI);
+            ctx.fill();
+
+        }
+    </script>
+</head>
+<body onload="draw();">
+    <canvas id="myCanvas" width="450" height="450"></canvas>
+</body>
+</html>
